@@ -12,15 +12,9 @@ variable "location" {
 
 // App Service Plan
 
-variable "app_service_plan_name" {
+variable "app_service_plan_id" {
   type = string
-  description = "(required) the windows app service plan name"
-}
-
-variable "sku" {
-  type = string
-  description = "(required) app service plan sku"
-  default = "Free"
+  description = "(required) the windows app service plan id"
 }
 
 // Web App
@@ -33,17 +27,11 @@ variable "web_app_name" {
 variable "web_app_current_stack" {
   type = string
   description = "(required) web app current stack (node, java, .net)"
-  default = "node"
-}
-
-variable "web_app_node_version" {
-  type = string
-  description = "(optional) node version of current stack - required when current_stack = node"
-  // default = "14-LTS"
+  default = "dotnet"
 }
 
 variable "web_app_dotnet_version" {
   type = string
   description = "(Optional) The version of .NET to use when current_stack is set to dotnet."
-  // default = "v6.0"
+  default = "v6.0"
 }

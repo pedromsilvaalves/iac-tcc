@@ -1,13 +1,6 @@
 resource "azurerm_resource_group" "azure_rg" {
   name     = var.resource_group_name
   location = var.location
-
-  tags = {
-    Region            = var.location
-    Team              = var.team_tag
-    Environment       = var.env
-    Creator           = var.creator
-  }
 }
 
 resource "azurerm_mssql_server" "azure_mssql_server" {
@@ -17,13 +10,6 @@ resource "azurerm_mssql_server" "azure_mssql_server" {
   version                      = var.mssql_server_version // "12.0"
   administrator_login          = var.mssql_server_administrator_login // "4dm1n157r470r"
   administrator_login_password = var.mssql_server_administrator_login_password // "4-v3ry-53cr37-p455w0rd"
-
-  tags = {
-    Region            = var.location
-    Team              = var.team_tag
-    Environment       = var.env
-    Creator           = var.creator
-  }
 }
 
 resource "azurerm_mssql_database" "azure_mssql_database" {
@@ -34,11 +20,4 @@ resource "azurerm_mssql_database" "azure_mssql_database" {
   max_size_gb    = var.mssql_database_max_size_gb // 4
   read_scale     = var.mssql_database_read_scale // true
   sku_name       = var.mssql_database_sku_name // "S0"
-
-  tags = {
-    Region            = var.location
-    Team              = var.team_tag
-    Environment       = var.env
-    Creator           = var.creator
-  }
 }
