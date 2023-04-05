@@ -1,2 +1,4 @@
 credentials.secret
 .terraform*
+infra/composition/dev/terraform.tfstate
+infra/composition/dev/terraform.tfstate.backup

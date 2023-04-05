@@ -1,8 +1,3 @@
-resource "azurerm_resource_group" "azure_rg" {
-  name     = var.resource_group_name
-  location = var.location
-}
-
 resource "azurerm_mssql_server" "azure_mssql_server" {
   name                         = var.mssql_server_name // "example-sqlserver"
   resource_group_name          = var.resource_group_name

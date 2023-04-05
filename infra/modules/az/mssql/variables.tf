@@ -50,7 +50,7 @@ variable "mssql_database_max_size_gb" {
 
 variable "mssql_database_read_scale" {
   type = bool
-  default = true
+  default = false
 }
 
 variable "mssql_database_sku_name" {
